@@ -1,0 +1,35 @@
+<p-messages></p-messages>
+<form [formGroup]="formularioCliente">
+  <div class="rectangle">
+    <div class="grid">
+      <div class="col-12">
+        <label for="nome">Nome:</label>
+        <input type="text" class="nome" id="nome" formControlName="nome">
+      </div>
+      <div class="col-12">
+        <label for="email">E-mail:</label>
+        <input type="email" class="email" id="email" formControlName="email">
+      </div>
+      <div class="col-12">
+        <label for="cpf">CPF:</label>
+        <input class="cpf" id="cpf" formControlName="cpf">
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-12">
+        <label for="telefone">Telefone:</label>
+        <input class="telefone" id="telefone" formControlName="telefone">
+      </div>
+      <div class="col-12">
+        <label for="senha">Senha:</label>
+        <input type="password" class="senha" id="senha" formControlName="senha">
+      </div>
+      <div class="col-12">
+        <label for="dataNascimento">Data de nascimento:</label>
+        <input type="date" class="dataNascimento" id="dataNascimento" formControlName="dataNascimento">
+      </div>
+    </div>
+    <app-endereco [formularioEndereco]="formularioEndereco"></app-endereco>
+  </div>
+  <p-button type="submit" (click)="salvar()">Salvar</p-button>
+</form>
