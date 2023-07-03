@@ -1,35 +1,70 @@
 <p-messages></p-messages>
 <form [formGroup]="formularioCliente">
+  <div class="rectangle-container">
   <div class="rectangle">
+    <h3 class="flex justify-content-left">Informações pessoais</h3>
+    <hr>
     <div class="grid">
-      <div class="col-12">
+      <div class="col-6">
         <label for="nome">Nome:</label>
-        <input type="text" class="nome" id="nome" formControlName="nome">
+        <input
+          id="nome"
+          class="nome"
+          type="text"
+          formControlName="nome"
+          placeholder="Nome">
       </div>
-      <div class="col-12">
+      <div class="col-6">
         <label for="email">E-mail:</label>
-        <input type="email" class="email" id="email" formControlName="email">
+        <input
+          id="email"
+          class="email"
+          type="email"
+          formControlName="email"
+          placeholder="E-mail">
       </div>
-      <div class="col-12">
+      <div class="col-6">
         <label for="cpf">CPF:</label>
-        <input class="cpf" id="cpf" formControlName="cpf">
+        <input
+          id="cpf"
+          class="cpf"
+          type="text"
+          formControlName="cpf"
+          placeholder="CPF">
       </div>
-    </div>
-    <div class="grid">
-      <div class="col-12">
+      <div class="col-6">
         <label for="telefone">Telefone:</label>
-        <input class="telefone" id="telefone" formControlName="telefone">
+        <input
+          id="telefone"
+          class="telefone"
+          type="text"
+          formControlName="telefone"
+          placeholder="Celular">
       </div>
-      <div class="col-12">
+      <div class="col-6">
         <label for="senha">Senha:</label>
-        <input type="password" class="senha" id="senha" formControlName="senha">
+        <input
+          id="senha"
+          class="senha"
+          type="password"
+          formControlName="senha"
+          placeholder="senha">
       </div>
-      <div class="col-12">
+      <div class="col-6">
         <label for="dataNascimento">Data de nascimento:</label>
-        <input type="date" class="dataNascimento" id="dataNascimento" formControlName="dataNascimento">
+        <input
+          id="dataNascimento"
+          class="dataNascimento"
+          type="date"
+          formControlName="dataNascimento"
+          placeholder="Data de nascimento"
+        >
       </div>
     </div>
-    <app-endereco [formularioEndereco]="formularioEndereco"></app-endereco>
+    <h3 class="flex justify-content-left">Endereço</h3>
+    <hr>
+    <app-endereco [formularioEndereco]="formularioEndereco"></app-endereco><br>
+    <p-button class="flex justify-content-center" type="submit" (click)="salvar()">Salvar</p-button>
   </div>
-  <p-button type="submit" (click)="salvar()">Salvar</p-button>
+</div>
 </form>
