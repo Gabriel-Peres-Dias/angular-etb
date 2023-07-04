@@ -1,24 +1,6 @@
 <form [formGroup]="formularioEndereco">
   <div class="grid">
     <div class="col-6">
-      <label for="logradouro">Logradouro:</label>
-      <input
-        id="logradouro"
-        class="logradouro"
-        type="text"
-        formControlName="logradouro"
-        placeholder="Logradouro">
-    </div>
-    <div class="col-6">
-      <label for="bairro">Bairro:</label>
-      <input
-        id="bairro"
-        class="bairro"
-        type="text"
-        formControlName="bairro"
-        placeholder="Bairro">
-    </div>
-    <div class="col-6">
       <label for="cep">CEP:</label>
       <input
         id="cep"
@@ -28,13 +10,13 @@
         placeholder="CEP">
     </div>
     <div class="col-6">
-      <label for="numero">Número:</label>
+      <label for="bairro">Bairro:</label>
       <input
-        id="numero"
-        class="numero"
+        id="bairro"
+        class="bairro"
         type="text"
-        formControlName="numero"
-        placeholder="Número">
+        formControlName="bairro"
+        placeholder="Bairro">
     </div>
     <div class="col-6">
       <label for="uf">UF:</label>
@@ -53,6 +35,24 @@
         type="text"
         formControlName="cidade"
         placeholder="Cidade">
+    </div>
+    <div class="col-6">
+      <label for="logradouro">Logradouro:</label>
+      <input
+        id="logradouro"
+        class="logradouro"
+        type="text"
+        formControlName="logradouro"
+        placeholder="Logradouro">
+    </div>
+    <div class="col-6">
+      <label for="numero">Número:</label>
+      <input
+        id="numero"
+        class="numero"
+        type="text"
+        formControlName="numero"
+        placeholder="Número">
     </div>
     <div class="col-12">
       <label for="complemento">Complemento:</label>

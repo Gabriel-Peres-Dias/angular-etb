@@ -11,12 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarModule } from 'primeng/toolbar';
+import { HeaderComponent } from './componentes/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

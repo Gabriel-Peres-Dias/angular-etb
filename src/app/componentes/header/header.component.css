@@ -1,0 +1,8 @@
+:host ::ng-deep .p-toolbar {
+    background-color: #eff3f8;
+    height: 75px;
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}

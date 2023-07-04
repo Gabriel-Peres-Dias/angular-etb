@@ -1,10 +1,10 @@
 .rectangle {
   width: 1000px;
-  height: 770px;
-  background-color: lightgray;
+  height: 780px;
+  background-color: #eff3f8;
   border: 1px solid gray;
   padding: 20px;
-  margin-top: -70px;
+  margin-top: -75px;
 }
 
 .rectangle-container {
