@@ -1,0 +1,43 @@
+<div class="rectangle-container">
+  <div class="rectangle">
+    <h3 class="flex justify-content-left">Informações pessoais</h3>
+    <hr>
+    <div class="grid">
+      <div class="col-6">
+        <label for="nome">Nome:</label>
+        <input
+          id="nome"
+          class="nome"
+          type="text"
+          [(ngModel)]="funcionario.nome">
+      </div>
+      <div class="col-6">
+        <label for="email">E-mail:</label>
+        <input
+          id="email"
+          class="email"
+          type="email"
+          [(ngModel)]="funcionario.email">
+      </div>
+      <div class="col-6">
+        <label for="cpf">CPF:</label>
+        <input
+          id="cpf"
+          class="cpf"
+          type="text"
+          [(ngModel)]="funcionario.cpf">
+      </div>
+      <div class="col-6">
+        <label for="matricula">Matrícula:</label>
+        <input
+          id="matricula"
+          class="matricula"
+          type="text"
+          [(ngModel)]="funcionario.matricula">
+      </div>
+    </div>
+    <h3 class="flex justify-content-left">Endereço</h3>
+    <hr>
+    <app-endereco [endereco]="funcionario.endereco"></app-endereco><br>
+  </div>
+</div>

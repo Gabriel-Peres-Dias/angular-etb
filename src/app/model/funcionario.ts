@@ -1,10 +1,10 @@
 import { Endereco } from "./endereco";
 
-export interface Cliente {
+export interface Funcionario {
   id?: number;
   nome?: string;
   email?: string;
   cpf?: string;
-  telefone?: string;
+  matricula?: string;
   endereco?: Endereco;
 }

@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClienteService } from '../../../services/cliente.service';
+import { Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { RespostaErro } from 'src/app/model/respostaErro';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
-  selector: 'app-cliente',
-  templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.css'],
+  selector: 'app-cadastro-funcionario',
+  templateUrl: './cadastro-funcionario.component.html',
+  styleUrls: ['./cadastro-funcionario.component.css'],
   providers: [MessageService]
 })
-export class ClienteComponent  implements OnInit{
+export class CadastroFuncionarioComponent {
 
-  formularioCliente! : FormGroup;
+  formularioFuncionario! : FormGroup;
   formularioEndereco: FormGroup = this.formBuilder.group({
     logradouro: [null, [Validators.required]],
     bairro: [null, [Validators.required]],
@@ -23,24 +24,25 @@ export class ClienteComponent  implements OnInit{
     complemento: [null]
   });
 
-  constructor(private formBuilder: FormBuilder, private clienteService: ClienteService, private messageService: MessageService) {}
+  constructor(private formBuilder: FormBuilder, private funcionarioService: FuncionarioService, private messageService: MessageService, private router: Router) {}
+
   ngOnInit(): void {
-    this.formularioCliente = this.formBuilder.group({
+    this.formularioFuncionario = this.formBuilder.group({
       nome: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       cpf: [null, [Validators.required]],
-      telefone: [null, [Validators.required]],
-      senha: [null, [Validators.required]],
-      dataNascimento: [null, [Validators.required]],
+      matricula: [null, [Validators.required]],
       endereco: this.formularioEndereco
     });
   }
 
   public salvar(): void {
-    if (!!this.formularioCliente.valid) {
-      this.clienteService.cadastrarCliente(this.formularioCliente.value).subscribe(() => {
+    if (!!this.formularioFuncionario.valid) {
+      this.funcionarioService.cadastrarFuncionario(this.formularioFuncionario.value).subscribe(() => {
         this.messageService.add({severity:'success', summary:'Salvo com sucesso', detail:'Cadastro salvo com sucesso'});
-        this.formularioCliente.reset();
+        setTimeout(() => {
+          this.router.navigate(['listar-funcionarios']);
+        }, 5000);
       }, (error) => {
         const erros: RespostaErro[] = error.error;
         erros.forEach(er => {
@@ -49,7 +51,7 @@ export class ClienteComponent  implements OnInit{
       });
     } else {
       this.messageService.add({severity:'warn', summary:'Erro ao salvar', detail: 'Formulário inválido'});
-      this.formularioCliente.markAllAsTouched();
+      this.formularioFuncionario.markAllAsTouched();
     }
   }
 }

@@ -1,0 +1,34 @@
+<p-table [value]="funcionarios" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>CPF</th>
+          <th>Matricula</th>
+          <th>CEP</th>
+          <th>Bairro</th>
+          <th>UF</th>
+          <th>Cidade</th>
+          <th>Logradouro</th>
+          <th>Número</th>
+          <th>Complemento</th>
+          <th>Detalhar</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-funcionario>
+      <tr>
+          <td>{{ funcionario.nome }}</td>
+          <td>{{ funcionario.email }}</td>
+          <td>{{ funcionario.cpf }}</td>
+          <td>{{ funcionario.matricula }}</td>
+          <td>{{ funcionario.endereco.cep }}</td>
+          <td>{{ funcionario.endereco.bairro }}</td>
+          <td>{{ funcionario.endereco.uf }}</td>
+          <td>{{ funcionario.endereco.cidade }}</td>
+          <td>{{ funcionario.endereco.logradouro }}</td>
+          <td>{{ funcionario.endereco.numero }}</td>
+          <td>{{ funcionario.endereco.complemento }}</td>
+          <td><p-button (click)="visualizarFuncionario(funcionario.id)">Detalhar</p-button></td>
+      </tr>
+  </ng-template>
+</p-table>

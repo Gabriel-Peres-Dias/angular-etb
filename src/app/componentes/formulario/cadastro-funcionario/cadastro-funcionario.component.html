@@ -1,0 +1,52 @@
+<p-messages></p-messages>
+<form [formGroup]="formularioFuncionario">
+  <div class="rectangle-container">
+  <div class="rectangle">
+    <h3 class="flex justify-content-left">Informações do funcionário</h3>
+    <hr>
+    <div class="grid">
+      <div class="col-6">
+        <label for="nome">Nome:</label>
+        <input
+          id="nome"
+          class="nome"
+          type="text"
+          formControlName="nome"
+          placeholder="Nome">
+      </div>
+      <div class="col-6">
+        <label for="email">E-mail:</label>
+        <input
+          id="email"
+          class="email"
+          type="email"
+          formControlName="email"
+          placeholder="E-mail">
+      </div>
+      <div class="col-6">
+        <label for="cpf">CPF:</label>
+        <input
+          id="cpf"
+          class="cpf"
+          type="text"
+          formControlName="cpf"
+          placeholder="CPF">
+      </div>
+      <div class="col-6">
+        <label for="matricula">Matrícula:</label>
+        <input
+          id="matricula"
+          class="matricula"
+          type="text"
+          formControlName="matricula"
+          placeholder="Matrícula"
+        >
+      </div>
+    </div>
+    <h3 class="flex justify-content-left">Endereço</h3>
+    <hr>
+    <app-cadastro-endereco [formularioEndereco]="formularioEndereco"></app-cadastro-endereco><br>
+    <p-button class="flex justify-content-center" type="submit" (click)="salvar()">Salvar</p-button>
+  </div>
+</div>
+</form>

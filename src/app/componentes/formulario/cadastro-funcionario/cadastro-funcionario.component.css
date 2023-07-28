@@ -1,0 +1,15 @@
+.rectangle {
+  width: 1000px;
+  height: 780px;
+  background-color: #eff3f8;
+  border: 1px solid gray;
+  padding: 20px;
+  margin-top: -75px;
+}
+
+.rectangle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

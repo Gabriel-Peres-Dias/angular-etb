@@ -1,0 +1,35 @@
+<p-table [value]="clientes" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>CPF</th>
+          <th>Telefone</th>
+          <th>CEP</th>
+          <th>Bairro</th>
+          <th>UF</th>
+          <th>Cidade</th>
+          <th>Logradouro</th>
+          <th>Número</th>
+          <th>Complemento</th>
+          <th>Detalhar</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-cliente>
+      <tr>
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>{{ cliente.cpf }}</td>
+          <td>{{ cliente.telefone }}</td>
+          <!-- <td>{{ cliente.dataNascimento }}</td> -->
+          <td>{{ cliente.endereco.cep }}</td>
+          <td>{{ cliente.endereco.bairro }}</td>
+          <td>{{ cliente.endereco.uf }}</td>
+          <td>{{ cliente.endereco.cidade }}</td>
+          <td>{{ cliente.endereco.logradouro }}</td>
+          <td>{{ cliente.endereco.numero }}</td>
+          <td>{{ cliente.endereco.complemento }}</td>
+          <td><p-button (click)="visualizarCliente(cliente.id)">Detalhar</p-button></td>
+      </tr>
+  </ng-template>
+</p-table>

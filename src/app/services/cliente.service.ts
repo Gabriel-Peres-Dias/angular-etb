@@ -13,11 +13,24 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrarCliente(cliente: Cliente): Observable<Cliente> {
+  public buscarClientePorId(id: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.API}/${id}`);
+  }
+
+  public buscarClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.API);
+  }
+
+  public cadastrarCliente(cliente: Cliente): Observable<Cliente>{
     return this.http.post<Cliente>(this.API, cliente);
   }
 
-  getCliente(id: number): Observable<Cliente> {
-    return this.http.get<Cliente>(`${this.API}/${id}`);
+  public editarCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(this.API, cliente);
   }
+
+  public desativarClientePorId(id: number): Observable<Cliente> {
+    return this.http.delete<Cliente>(`${this.API}/${id}`);
+  }
+
 }
