@@ -6,5 +6,6 @@ export interface Funcionario {
   email?: string;
   cpf?: string;
   matricula?: string;
+  senha?: string;
   endereco?: Endereco;
 }

@@ -32,8 +32,7 @@ export class CadastroClienteComponent  implements OnInit{
       email: [null, [Validators.required, Validators.email]],
       cpf: [null, [Validators.required]],
       telefone: [null, [Validators.required]],
-      senha: [null, [Validators.required]],
-      dataNascimento: [null, [Validators.required]],
+      // dataNascimento: [null, [Validators.required]],
       endereco: this.formularioEndereco
     });
   }
@@ -44,7 +43,7 @@ export class CadastroClienteComponent  implements OnInit{
         this.messageService.add({severity:'success', summary:'Salvo com sucesso', detail:'Cadastro salvo com sucesso'});
         setTimeout(() => {
           this.router.navigate(['listar-clientes']);
-        }, 5000);
+        }, 1000);
       }, (error) => {
         const erros: RespostaErro[] = error.error;
         erros.forEach(er => {

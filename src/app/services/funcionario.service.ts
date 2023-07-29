@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Funcionario } from '../model/funcionario';
 import { Observable } from 'rxjs';
+import { Login } from '../model/login';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,12 @@ export class FuncionarioService {
   }
 
   public desativarFuncionarioPorId(id: number): Observable<Funcionario> {
-    return this.http.delete<Funcionario>(`${this.API}/${id}`)
+    return this.http.delete<Funcionario>(`${this.API}/${id}`);
+  }
+
+  public logarFuncionario(login: Login): Observable<Boolean> {
+    const  url  = `${this.API}/login`;
+    return this.http.put<Boolean>(url, login);
   }
 
 }

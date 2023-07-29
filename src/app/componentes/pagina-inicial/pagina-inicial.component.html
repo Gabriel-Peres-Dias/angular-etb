@@ -1,8 +1,37 @@
+<p-messages></p-messages>
   <div class="rectangle-container">
   <div class="rectangle">
     <div class="flex justify-content-center">
-      <h3>Bem vindx</h3>
+      <h3>Bem vindo(a)</h3>
     </div>
     <hr>
+        <form [formGroup]="formularioLogin">
+          <div class="grid">
+          <div class="col-12">
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              class="email"
+              type="email"
+              formControlName="email"
+              placeholder="E-mail">
+          </div>
+          <div class="col-12">
+            <label for="senha">Senha:</label>
+            <input
+              id="senha"
+              class="senha"
+              type="password"
+              formControlName="senha"
+              placeholder="Senha:">
+          </div>
+          <p-button
+            class="flex justify-content-center"
+            type="submit"
+            (click)="login()">
+            Login
+          </p-button>
+        </div>
+        </form>
   </div>
 </div>

@@ -32,6 +32,7 @@ export class CadastroFuncionarioComponent {
       email: [null, [Validators.required, Validators.email]],
       cpf: [null, [Validators.required]],
       matricula: [null, [Validators.required]],
+      senha: [null, [Validators.required]],
       endereco: this.formularioEndereco
     });
   }
@@ -42,7 +43,7 @@ export class CadastroFuncionarioComponent {
         this.messageService.add({severity:'success', summary:'Salvo com sucesso', detail:'Cadastro salvo com sucesso'});
         setTimeout(() => {
           this.router.navigate(['listar-funcionarios']);
-        }, 5000);
+        }, 1000);
       }, (error) => {
         const erros: RespostaErro[] = error.error;
         erros.forEach(er => {
