@@ -34,9 +34,9 @@ export class FuncionarioService {
     return this.http.delete<Funcionario>(`${this.API}/${id}`);
   }
 
-  public logarFuncionario(login: Login): Observable<Boolean> {
+  public logarFuncionario(login: Login): Observable<Funcionario> {
     const  url  = `${this.API}/login`;
-    return this.http.put<Boolean>(url, login);
+    return this.http.put<Funcionario>(url, login);
   }
 
 }
