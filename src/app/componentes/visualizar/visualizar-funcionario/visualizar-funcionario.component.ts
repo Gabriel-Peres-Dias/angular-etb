@@ -17,7 +17,7 @@ export class VisualizarFuncionarioComponent implements OnInit{
   ngOnInit(): void {
     this.funcionarioService.buscarFuncionarios().subscribe((response: Funcionario[]) => {
       this.funcionarios = response;
-    })
+    });
   }
 
   public visualizarFuncionario(id: number): void {

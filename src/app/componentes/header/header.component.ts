@@ -10,8 +10,12 @@ export class HeaderComponent {
 
   constructor(private recuperarLoginService: RecuperarLoginService) {}
 
-  deslogar() {
+  public deslogar(): void {
     this.recuperarLoginService.deslogar();
+  }
+
+  public usuarioLogado(): boolean {
+    return this.recuperarLoginService.podeAcessar();
   }
 
 }

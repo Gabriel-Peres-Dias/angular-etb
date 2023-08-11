@@ -7,6 +7,7 @@ import { VisualizarClienteComponent } from './componentes/visualizar/visualizar-
 import { VisualizarFuncionarioComponent } from './componentes/visualizar/visualizar-funcionario/visualizar-funcionario.component';
 import { ClienteComponent } from './componentes/cliente/cliente.component';
 import { FuncionarioComponent } from './componentes/funcionario/funcionario.component';
+import { autenticadorDeRota } from './seguranca/service.guard';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'cadastro-cliente',
-    component: CadastroClienteComponent
+    component: CadastroClienteComponent,
+    canActivate: [autenticadorDeRota]
   },
   {
     path: 'cadastro-funcionario',
@@ -28,19 +30,23 @@ const routes: Routes = [
   },
   {
     path: 'listar-clientes',
-    component: VisualizarClienteComponent
+    component: VisualizarClienteComponent,
+    canActivate: [autenticadorDeRota]
   },
   {
     path: 'listar-funcionarios',
-    component: VisualizarFuncionarioComponent
+    component: VisualizarFuncionarioComponent,
+    canActivate: [autenticadorDeRota]
   },
   {
     path: 'cliente/:id',
-    component: ClienteComponent
+    component: ClienteComponent,
+    canActivate: [autenticadorDeRota]
   },
   {
     path: 'funcionario/:id',
-    component: FuncionarioComponent
+    component: FuncionarioComponent,
+    canActivate: [autenticadorDeRota]
   }
 ];
 

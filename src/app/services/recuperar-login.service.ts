@@ -18,4 +18,9 @@ export class RecuperarLoginService {
   public deslogar(): void {
     localStorage.clear();
   }
+
+  public podeAcessar(): boolean {
+    const dados = localStorage.getItem('funcionarioLogado');
+    return !!dados;
+  }
 }
