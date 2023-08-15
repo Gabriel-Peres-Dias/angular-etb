@@ -9,5 +9,6 @@ export const autenticadorDeRota: CanActivateFn = (route, state) => {
   if (!!acesso) {
     return true;
   }
+  alert('Usuário não autenticado!');
   return router.createUrlTree(['pagina-inicial']);
 };

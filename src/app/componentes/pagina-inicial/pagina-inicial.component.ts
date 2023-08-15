@@ -15,7 +15,7 @@ import { RecuperarLoginService } from 'src/app/services/recuperar-login.service'
 export class PaginaInicialComponent implements OnInit{
 
   formularioLogin!: FormGroup;
-  MENSAGEM_ERRO_LOGIN: string = "E-mail ou senha estão errados!";
+  MENSAGEM_ERRO_LOGIN: string = "E-mail ou senha estão incorretos!";
 
   constructor(
     private funcionarioService: FuncionarioService,

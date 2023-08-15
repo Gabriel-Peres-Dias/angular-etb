@@ -42,7 +42,7 @@ export class CadastroFuncionarioComponent {
       this.funcionarioService.cadastrarFuncionario(this.formularioFuncionario.value).subscribe(() => {
         this.messageService.add({severity:'success', summary:'Salvo com sucesso', detail:'Cadastro salvo com sucesso'});
         setTimeout(() => {
-          this.router.navigate(['listar-funcionarios']);
+          this.router.navigate(['pagina-inicial']);
         }, 1000);
       }, (error) => {
         const erros: RespostaErro[] = error.error;

@@ -21,6 +21,7 @@ import { VisualizarFuncionarioComponent } from './componentes/visualizar/visuali
 import { ClienteComponent } from './componentes/cliente/cliente.component';
 import { FuncionarioComponent } from './componentes/funcionario/funcionario.component';
 import { EnderecoComponent } from './componentes/endereco/endereco.component';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EnderecoComponent } from './componentes/endereco/endereco.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToolbarModule,
-    TableModule
+    TableModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
